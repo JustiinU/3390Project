@@ -2,21 +2,14 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const LoginScreen = ({ navigation }) => {
+const RegisterScreen = ( { navigation }) => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    console.log(username, password);
-  };
-
-  const handleRegister = () => {
-    navigation.navigate('Register');
-  };
-
-  const handleForgotPassword = () => {
-    console.log('Go to forgot password page');
-  };
+  const handleCreateAccount = () => {
+    console.log('username, email, password');
+    };
 
   return (
     <View style={styles.screen}>
@@ -24,41 +17,42 @@ const LoginScreen = ({ navigation }) => {
       <Icon name="movie" size={110} color="#000" style={styles.iconMovie}/>
         <View style={styles.headerContainer}>
         <Text style = {styles.headerText}>
-            Welcome Back
+            Register
         </Text>
         </View>
-        <Text style={styles.label}>Username</Text>
+        <Text style={styles.label}>Create Username</Text>
         <View style={styles.icon}>
           <Icon name="person" size={23} color="#000" />
           <TextInput
               style={styles.input}
-              placeholder="Username"
+              placeholder=" Create Username"
               onChangeText={setUsername}
               value={username} />
         </View>
-        <Text style={styles.label}>Password</Text>
+        <Text style={styles.label}>Enter Email</Text>
+        <View style={styles.icon}>
+          <Icon name="mail" size={21} color="#000" />
+          <TextInput
+              style={styles.input}
+              placeholder=" Email-Address"
+              onChangeText={setEmail}
+              value={email} 
+              keyboardType = "email-address"/>
+        </View>
+        <Text style={styles.label}>Create Password</Text>
         <View style={styles.icon}>
           <Icon name="lock" size={20} color="#000" />
           <TextInput
               style={styles.input}
-              placeholder="Password"
+              placeholder="Create Password"
               secureTextEntry={true} // Hides the password
               onChangeText={setPassword}
               value={password} />
         </View>
-        <TouchableOpacity onPress={handleForgotPassword} style={styles.forgotPassword}>
-          <Text style={styles.forgotPasswordText}> Forgot Password?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.loginButton} onPress = {handleLogin}>
+        <TouchableOpacity style={styles.accountButton} onPress = {handleCreateAccount}>
             <Text 
-                style={styles.loginText}> LOGIN 
+                style={styles.accountText}> CREATE ACCOUNT
             </Text> 
-        </TouchableOpacity>
-         <TouchableOpacity style={styles.registerContainer} onPress={handleRegister}>
-            <Text style={styles.accountText}>
-                Don't have an account? 
-                <Text style={styles.register}> Register</Text>
-            </Text>
         </TouchableOpacity>
         </View>
     </View>
@@ -66,11 +60,10 @@ const LoginScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: 'black',
-  },
-
+    screen: {
+        flex: 1,
+        backgroundColor: 'black',
+    },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -88,7 +81,7 @@ const styles = StyleSheet.create({
   },
 
   headerContainer: {
-    marginBottom: 20,
+    marginBottom: 25,
   },
 
   headerText: {
@@ -122,47 +115,21 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 
-  loginButton: {
+  accountButton: {
     width: '90%',
     borderRadius: 10,
     height: 50,
     backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 20,
+    marginTop: 30,
   },
 
-  loginText: {
+  accountText: {
     color: 'white',
 
   },
 
-  forgotPassword: {
-    marginBottom: 15,
-    alignSelf: 'flex-start',
-    marginLeft: '60%',
-  },
-
-  forgotPasswordText: {
-    fontWeight: 'bold',
-  },
-
-  registerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 15,
-  },
-
-  accountText: {
-    color: 'gray',    
-  },
-
-  register: {
-    fontWeight: 'bold',
-    color: 'black',
-  },
-
 });
 
-export default LoginScreen;
+export default RegisterScreen;
