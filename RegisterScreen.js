@@ -127,7 +127,8 @@ const styles = StyleSheet.create({
 
   accountText: {
     color: 'white',
-
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 
 });
