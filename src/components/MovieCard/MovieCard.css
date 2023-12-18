@@ -1,0 +1,39 @@
+.card-container { 
+    width: 18rem; 
+    background-color: #0e2e53; 
+    box-shadow: 2px 2px 10px black;
+    border-radius: 4px; 
+}
+
+.card-img-container { 
+        width: 100%; 
+        height: 20rem;
+        justify-content: center;
+        align-items: center;
+}
+
+.card-img { 
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+    position: center center; 
+}
+
+.card-details {
+    color: var(--primary-text-color);
+    display: felx; 
+    flex-direction: column;
+    gap: 8px; 
+    background-color: #0e2e53;
+    padding: 4%; 
+    text-align: left;
+}
+
+.title { 
+    font-size: 1.25rem; 
+}
+
+.ratings { 
+    display: flex; 
+    justify-content: space-between;
+}

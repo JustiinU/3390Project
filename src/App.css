@@ -1,0 +1,38 @@
+/**removing defualt css from the browser**/
+*{
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; 
+}
+
+:root{ 
+  --background-color: #770708; 
+  --primary-text-color: white; 
+  --card-bg-color: #1e293b;
+}
+
+body { 
+  background-color: var(--background-color);
+  overflow-x: hidden; 
+}
+
+.header { 
+  display: flex; 
+  justify-content: center;
+  padding: 1rem; 
+  position: fixed; 
+  width: 100vw; 
+  z-index: 1; 
+  background-color: var(--background-color);
+}
+
+.heading-1 { 
+  color: var(--primary-text-color); 
+}
+
+.main { 
+  display: flex; 
+  gap: 1rem; 
+  flex-wrap: wrap;
+  padding: 8rem 2rem 2rem 2rem;
+}
